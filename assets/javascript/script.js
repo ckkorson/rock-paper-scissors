@@ -1,4 +1,4 @@
-var playerInput = "P";
+let playerInput = prompt("Please enter R, P, or S");
 var computerInput = ["R","P","S"]
 
 function getRandom() {
@@ -8,6 +8,7 @@ function getRandom() {
 var x = getRandom()
 console.log("You played " + playerInput)
 console.log("The computer played " + computerInput[x]);
+alert("The computer played " + computerInput[x])
 
 function rock() {
     if (computerInput[x] === "P") {
@@ -38,17 +39,18 @@ function scissors() {
 
 function findWinner() {
     if (playerInput === computerInput[x]) {
-        console.log("It's a tie!")
+        return ("It's a tie!")
     }
     else if (playerInput === "R") {
-        console.log(rock())
+        return (rock())
     }
     else if (playerInput === "S") {
-        console.log(scissors())
+        return (scissors())
     }
     else if (playerInput === "P") {
-        console.log(paper())
+        return (paper())
     }
 }
 
 console.log(findWinner())
+alert(findWinner())

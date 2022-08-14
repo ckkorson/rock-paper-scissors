@@ -1,5 +1,3 @@
-// variable to check if player wants to continue playing
-var gameOver = false;
 // array of possible random answers
 var computerInput = ["R","P","S"];
 // variable to store user wins
@@ -12,7 +10,7 @@ var ties = 0;
 function getRandom() {
    return Math.floor(Math.random() * 3)
 }
-// fucntion to ask user if they would like to play
+// function to ask user if they would like to play
 function startGame() {
     gameOver = !confirm("Do you want to play rock, paper, scissors?");
 }

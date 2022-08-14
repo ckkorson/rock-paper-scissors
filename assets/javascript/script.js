@@ -5,6 +5,10 @@ function getRandom() {
    return Math.floor(Math.random() * 3)
 }
 
+function startGame() {
+    gameOver = !confirm("Do you want to play rock, paper, scissors?");
+}
+
 function rock() {
     if (computerInput[x] === "P") {
         return ("You lost.")
@@ -38,22 +42,18 @@ function tryAgain() {
 
 function findWinner() {
     if (playerInput === computerInput[x]) {
-        gameOver = true
         alert("The computer played " + computerInput[x])
         return ("It's a tie!")
     }
     else if (playerInput === "R") {
-        gameOver = true
         alert("The computer played " + computerInput[x])
         return (rock())
     }
     else if (playerInput === "S") {
-        gameOver = true
         alert("The computer played " + computerInput[x])
         return (scissors())
     }
     else if (playerInput === "P") {
-        gameOver = true
         alert("The computer played " + computerInput[x])
         return (paper())
     }
@@ -63,14 +63,14 @@ function findWinner() {
 }
 
 function playAgain() {
-    if (confirm("Would you like to play again?") = false) {
-        gameOver = true
-    }
+    gameOver = !confirm("Do you want to play again?")
 }
+
+startGame()
 
 while (gameOver === false) {
     var playerInput = prompt("Please enter R, P, or S").toUpperCase();
     var x = getRandom()
     alert(findWinner())
-    // playAgain()
+    playAgain()
 }
